@@ -13,32 +13,28 @@ namespace Assets.__Game.Resources.Scripts.Balloon
 
     private EventBinding<EventStructs.BalloonDestroyEvent> _fishDestroyEvent;
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
       _fishDestroyEvent = new EventBinding<EventStructs.BalloonDestroyEvent>(SpawnDestroyParticles);
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
       _fishDestroyEvent.Remove(SpawnDestroyParticles);
     }
 
-    private void SpawnDestroyParticles(EventStructs.BalloonDestroyEvent balloonDestroyEvent)
-    {
+    private void SpawnDestroyParticles(EventStructs.BalloonDestroyEvent balloonDestroyEvent) {
       if (balloonDestroyEvent.BalloonId != transform.GetInstanceID()) return;
 
       transform.DOPunchScale(new Vector3(0.25f, 0.25f), 0.5f)
         .SetEase(Ease.InOutQuad)
-        .OnComplete(() =>
-        {
+        .OnComplete(() => {
           SpawnParticle(balloonDestroyEvent.Correct ? _starPrefab : _angryFaceParticlesPrefab);
           SpawnParticle(_bubblesParticlesPrefab);
+          DOTween.Kill(transform);
           Destroy(gameObject);
         });
     }
 
-    private void SpawnParticle(GameObject prefab)
-    {
+    private void SpawnParticle(GameObject prefab) {
       Instantiate(prefab, _particlesSpawnPoint.position, Quaternion.identity);
     }
   }

@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0918210c8ca8cce4092d503e27935b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questAudio: {fileID: 8300000, guid: 652f46a2973dc4146a456dca585fedd9, type: 3}
+  _questAudio: {fileID: 8300000, guid: d80e1c2fca4214549a13b232f8ddbbf8, type: 3}
   _winAnnouncerClips:
   - {fileID: 8300000, guid: 415019c34f4b59341994b0222e61ff03, type: 3}
   - {fileID: 8300000, guid: fc576c5bf8ff8ff48be18de5b3135c53, type: 3}
@@ -491,7 +491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _correctNumbersContainerSo: {fileID: 11400000, guid: 217846e4a1f878c439a55c7b1d7bf5f5, type: 2}
-  _canGetLevelPoint: 0
   _stuporTimeoutSeconds: 30
 --- !u!1 &8974865717063345824
 GameObject:

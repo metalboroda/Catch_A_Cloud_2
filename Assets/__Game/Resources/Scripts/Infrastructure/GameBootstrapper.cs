@@ -14,6 +14,8 @@ namespace Assets.__Game.Scripts.Infrastructure
     public FiniteStateMachine StateMachine;
     public SceneLoader SceneLoader;
 
+    private bool _questStateOnce;
+
     public GameBootstrapper()
     {
       StateMachine = new FiniteStateMachine();
@@ -38,22 +40,32 @@ namespace Assets.__Game.Scripts.Infrastructure
       _uiButtonEvent.Remove(ChangeState);
     }
 
-    private void Start()
-    {
-      SceneLoader.LoadSceneAsyncWithDelay(Hashes.GameScene, 2, this, () =>
-      {
-        StateMachine.Init(new GameQuestState(this));
+    private void Start() {
+      SceneLoader.LoadSceneAsyncWithDelay(Hashes.GameScene, 2f, this, () => {
+        if (_questStateOnce == false) {
+          StateMachine.Init(new GameQuestState(this));
+
+          _questStateOnce = true;
+        }
+        else {
+          StateMachine.ChangeState(new GameplayState(this));
+        }
 
         EventBus<EventStructs.ComponentEvent<GameBootstrapper>>.Raise(
           new EventStructs.ComponentEvent<GameBootstrapper> { Data = this });
       });
     }
 
-    public void RestartLevel()
-    {
-      SceneLoader.RestartSceneAsync(() =>
-      {
-        StateMachine.Init(new GameQuestState(this));
+    public void RestartLevel() {
+      SceneLoader.RestartSceneAsync(() => {
+        if (_questStateOnce == false) {
+          StateMachine.Init(new GameQuestState(this));
+
+          _questStateOnce = true;
+        }
+        else {
+          StateMachine.ChangeState(new GameplayState(this));
+        }
 
         EventBus<EventStructs.ComponentEvent<GameBootstrapper>>.Raise(
           new EventStructs.ComponentEvent<GameBootstrapper> { Data = this });

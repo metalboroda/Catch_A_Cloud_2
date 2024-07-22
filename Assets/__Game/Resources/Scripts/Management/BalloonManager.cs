@@ -12,8 +12,8 @@ namespace Assets.__Game.Resources.Scripts.Management
   public class BalloonManager : MonoBehaviour
   {
     [SerializeField] private CorrectValuesContainerSo _correctNumbersContainerSo;
-    [Space]
-    [SerializeField] private bool _canGetLevelPoint = true;
+    //[Space]
+    //[SerializeField] private bool _canGetLevelPoint = true;
     [Header("Stupor param's")]
     [SerializeField] private float _stuporTimeoutSeconds = 30f;
 

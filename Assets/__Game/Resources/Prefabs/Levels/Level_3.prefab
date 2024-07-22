@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6080821517881519399, guid: a454cc821da5e1b419971d0230763865, type: 3}
+      propertyPath: _questAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8974865716766051753, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -64,16 +68,32 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
+      propertyPath: _balloonSpawnInfos.Array.data[0].WordClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 72ec7a541f8f1684585f626d09f531dc, type: 3}
+    - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
+      propertyPath: _balloonSpawnInfos.Array.data[1].WordClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9556d8d1c0c14524488ab20f429dfbd6, type: 3}
+    - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[2].WordClip
       value: 
-      objectReference: {fileID: 8300000, guid: e8a4c70a4b5e60d448742fe2fd893863, type: 3}
+      objectReference: {fileID: 8300000, guid: 04327598ef6ffc54d873fbcfb157a5cb, type: 3}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[3].WordClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6e29a9923378da042a96ff34af92b1b7, type: 3}
+      objectReference: {fileID: 8300000, guid: 5ecd2c8840be85049b4d35bb33da2f24, type: 3}
+    - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
+      propertyPath: _balloonSpawnInfos.Array.data[0].BalloonValue
+      value: MACE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
+      propertyPath: _balloonSpawnInfos.Array.data[1].BalloonValue
+      value: COSSACK
+      objectReference: {fileID: 0}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[2].BalloonValue
-      value: tall
+      value: A
       objectReference: {fileID: 0}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[2].WordAnouncer
@@ -81,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: e8a4c70a4b5e60d448742fe2fd893863, type: 3}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[3].BalloonValue
-      value: a
+      value: SEE
       objectReference: {fileID: 0}
     - target: {fileID: 8974865717205484391, guid: a454cc821da5e1b419971d0230763865, type: 3}
       propertyPath: _balloonSpawnInfos.Array.data[3].WordAnouncer

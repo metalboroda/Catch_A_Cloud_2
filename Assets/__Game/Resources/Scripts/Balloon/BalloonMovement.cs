@@ -12,34 +12,32 @@ namespace Assets.__Game.Resources.Scripts.Balloon
 
     private BalloonController _balloonController;
 
-    private void Awake()
-    {
+    private void Awake() {
       _balloonController = GetComponent<BalloonController>();
 
       _initPosition = transform.position;
     }
 
-    public void SetMovementSpeed(float movementSpeed)
-    {
+    public void SetMovementSpeed(float movementSpeed) {
       _movementSpeed = movementSpeed;
     }
 
-    public void SetMovementTarget(Vector3 xTarget, float yTarget, float yOffset)
-    {
+    public void SetMovementTarget(Vector3 xTarget, float yTarget, float yOffset) {
       _movementTarget = new Vector3(xTarget.x, yTarget +  yOffset, 0);
     }
 
-    public void MoveToTarget()
-    {
-      transform.DOMove(_movementTarget, _movementSpeed).SetSpeedBased(true).OnComplete(() =>
-      {
-        EventBus<EventStructs.BalloonReMovementEvent>.Raise(new EventStructs.BalloonReMovementEvent
-        {
-          BalloonController = _balloonController
-        });
+    public void MoveToTarget() {
+      transform.DOMove(_movementTarget, _movementSpeed)
+        .SetSpeedBased(true)
+        .OnComplete(() => {
+          EventBus<EventStructs.BalloonReMovementEvent>.Raise(new EventStructs.BalloonReMovementEvent {
+            BalloonController = _balloonController
+          });
 
-        transform.DOMove(_initPosition, 0);
-      });
+          if (transform != null) {
+            transform.DOMove(_initPosition, 0);
+          }
+        });
     }
   }
 }
